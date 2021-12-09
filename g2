@@ -101,7 +101,7 @@ END
 
 #Create OpenVPN Config
 mkdir -p /var/www/html/public_html
-cat > /var/www/html/public_html/client.ovpn <<-END
+cat > /var/www/html/client.ovpn <<-END
 client
 dev tun
 proto tcp
@@ -126,15 +126,15 @@ reneg-sec 86400
 setenv CLIENT_CERT 0
 verb 3
 END
-echo '<ca>' >> /var/www/html/public_html/client.ovpn
-cat /etc/openvpn/ca.crt >> /var/www/html/public_html/client.ovpn
-echo '</ca>' >> /var/www/html/public_html/client.ovpn
-echo '<cert>' >> /var/www/html/public_html/client.ovpn
-cat /etc/openvpn/server.crt >> /var/www/html/public_html/client.ovpn
-echo '</cert>' >> /var/www/html/public_html/client.ovpn
-echo '<key>' >> /var/www/html/public_html/client.ovpn
-cat /etc/openvpn/server.key >> /var/www/html/public_html/client.ovpn
-echo '</key>' >> /var/www/html/public_html/client.ovpn
+echo '<ca>' >> /var/www/html/client.ovpn
+cat /etc/openvpn/ca.crt >> /var/www/html/client.ovpn
+echo '</ca>' >> /var/www/html/client.ovpn
+echo '<cert>' >> /var/www/html/client.ovpn
+cat /etc/openvpn/server.crt >> /var/www/html/client.ovpn
+echo '</cert>' >> /var/www/html/client.ovpn
+echo '<key>' >> /var/www/html/client.ovpn
+cat /etc/openvpn/server.key >> /var/www/html/client.ovpn
+echo '</key>' >> /var/www/html/client.ovpn
 
 
 cd /home/vps/public_html/
